@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA</title>
+    <link rel="stylesheet" href="tienda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="carrito-sidebar" class="carrito-sidebar oculto">
+        <h3>🛒 Carrito</h3>
+        <span class="cerrar-carrito" onclick="toggleCarrito()">✖</span>
+        <ul id="carrito-lista"></ul>
+        <p><strong>Total: $<span id="carrito-total">0</span></strong></p>
+        <button onclick="vaciarCarrito()" class="btn-vaciar">Vaciar Carrito</button>
+        <button onclick="finalizarCompra()" class="btn-finalizar">Finalizar Compra</button>
+    </div>
+
+    <header>
+        <img src="logo1.png" alt="logo" width="100" height="30">
+        <nav>
+            <ul class="flex-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#prod-id">Productos</a></li>
+                <li><a href="#testimonios-id">Testimonios</a></li>
+                <li><a href="#form-id">Formulario</a></li>
+                <a href="#mapa-id">Ubicación</a>
+                <li><a href="#footer-id">Contacto</a></li>
+                <div class="carrito-icono" onclick="toggleCarrito()">
+                    🛒 <span id="carrito-cantidad">0</span>
+                </div>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section id="prod-id">
+            <h2 class="prod-titulo">Productos</h2>
+            <div class="flex-container">   
+                <div class="item">
+                    <img src="cap1.jpg" alt="cap1" width="120">
+                    <p class="precio">$7999</p>
+                    <p class="oferta">15% OFF</p>
+                    <p class="descripcion">¡Protégete del sol y dale un toque de estilo a tu look! Hecha en exterior: algodón 100%. Con un estilo beisbolera</p>
+                    <button class="btn-item" onclick="agregarAlCarrito('Gorra 1', 7999)">Agregar al carrito</button>
+                </div>
+                <div class="item">
+                    <img src="cap2.jpg" alt="" width="100">
+                    <p class="precio">$8199</p>
+                    <p class="oferta">15% OFF</p>
+                    <p class="descripcion">¡Protégete del sol y dale un toque de estilo a tu look! Hecha en exterior: algodón 100%. Con un estilo beisbolera</p>
+                    <button class="btn-item" onclick="agregarAlCarrito('Gorra 2', 8199)">Agregar al carrito</button>
+                </div>
+                <div class="item">
+                    <img src="cap3.jpg" alt="" width="100">
+                    <p class="precio">$9999</p>
+                    <p class="oferta">15% OFF</p>
+                    <p class="descripcion">¡Protégete del sol y dale un toque de estilo a tu look! Hecha en exterior: algodón 100%. Con un estilo beisbolera</p>
+                    <button class="btn-item" onclick="agregarAlCarrito('Gorra 3', 9999)">Agregar al carrito</button>
+                </div>
+                <div class="item">
+                    <img src="cap4.jpg" alt="" width="100">
+                    <p class="precio">$9999</p>
+                    <p class="oferta">15% OFF</p>
+                    <p class="descripcion">¡Protégete del sol y dale un toque de estilo a tu look! Hecha en exterior: algodón 100%. Con un estilo beisbolera</p>
+                    <button class="btn-item" onclick="agregarAlCarrito('Gorra 4', 9999)">Agregar al carrito</button>
+                </div>
+                <div class="item">
+                    <img src="cap5.jpg" alt="" width="120">
+                    <p class="precio">$7999</p>
+                    <p class="oferta">15% OFF</p>
+                    <p class="descripcion">¡Protégete del sol y dale un toque de estilo a tu look! Hecha en exterior: algodón 100%. Con un estilo beisbolera</p>
+                    <button class="btn-item" onclick="agregarAlCarrito('Gorra 5', 7999)">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+       
+        <section id="testimonios-id" class="testimonios-section">
+            <h2 class="testimonios-titulo">Testimonios</h2>
+             <div class="testimonios-container">
+                <div class="testimonio">
+                    <img src="persona1.jpg" alt="Foto de Antonella" class="testimonio-img">
+                    <p>"Excelente calidad, llegó rapidísimo. ¡Recomiendo la tienda!"</p>
+                    <div class="estrellas">★★★★★</div>
+                    <h4>- Antonella L.</h4>
+                </div>
+                <div class="testimonio">
+                    <img src="persona2.jpg" alt="Foto de Luis" class="testimonio-img">
+                    <p>"Muy buena atención al cliente, volveré a comprar."</p>
+                    <div class="estrellas">★★★★★</div>
+                    <h4>- Luis G.</h4>
+                </div>
+                <div class="testimonio">
+                    <img src="persona3.jpg" alt="Foto de Ana Maria" class="testimonio-img">
+                    <p>"Los diseños son únicos y el precio genial."</p>
+                    <div class="estrellas">★★★★★</div>
+                    <h4>- Ana María G.</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="form-id" class="form-section">
+            <h2 class="form-titulo">Formulario</h2>
+            <form id="formulario" novalidate>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
+                <input type="email" name="mail" id="mail" placeholder="Correo Electrónico"><br>
+                <textarea rows="8" name="mensaje" id="mensaje" placeholder="Mensaje..."></textarea><br>
+                <input type="submit" value="Enviar">
+                <p id="mensaje-validacion" class="error-msg"></p>
+            </form>
+        </section>
+    </main>
+
+    <section id="mapa-id" class="mapa-section">
+        <h2 class="mapa-titulo">Ubicación de la Tienda</h2>
+        <div class="mapa-contenedor">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.716308869569!2d-58.44750352481856!3d-34.63517185945986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb7fa44e9cdb%3A0x2a8f11f72c4052c3!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1720978870033!5m2!1ses-419!2sar" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+
+    <footer id="footer-id" class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>📞 Contacto:</strong> 11 5909 2555</p>
+                <p><strong>📍 Dirección:</strong> Av. Brasil 2444, CABA</p>
+                <p><strong>🕒 Horario:</strong> Lun a Vie de 9 a 16:30 hs</p>
+            </div>
+            <div class="footer-redes">
+                <a href="https://wa.me/541159092555" target="_blank" class="icono"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/jemes_ok" target="_blank" class="icono"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/somosjemes" target="_blank" class="icono"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="carrito.js"></script>
+
+
+</body>
+</html>

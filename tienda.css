@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', Verdana, Tahoma, sans-serif;
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #59114D;
+    color: #ECE5F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.flex-links {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.flex-links a {
+    color: #ECE5F0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.flex-links a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- PRODUCTOS ---------- */
+.prod-titulo {
+    text-align: center;
+    margin: 5% 0;
+    font-size: 2rem;
+    color: #003B36;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.item {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    width: 250px;
+    background-color: #fff;
+}
+
+.item img {
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.precio {
+    font-size: x-large;
+    margin-left: 1%;
+    font-weight: bold;
+}
+
+.oferta {
+    font-size: medium;
+    color: #003B36;
+    margin-left: 1%;
+}
+
+.descripcion {
+    font-size: small;
+    text-align: left;
+    margin-left: 1%;
+    padding: 5px;
+}
+
+.btn-item {
+    background-color: #003B36;
+    color: #ECE5F0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-item:hover {
+    color: #003B36;
+    background-color: #ECE5F0;
+    cursor: pointer;
+    border: 1px solid #003B36;
+}
+
+
+/* ---------- CARRITO DE COMPRAS ---------- */
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background-color: #ECE5F0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+.oculto {
+    transform: translateX(100%);
+}
+
+.visible {
+    transform: translateX(0);
+}
+
+.carrito-icono {
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.carrito-sidebar h3 {
+    font-size: 1.2rem;
+    color: #003B36;
+}
+
+#carrito-lista {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#carrito-lista li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+.btn-vaciar,
+.btn-finalizar {
+    background-color: #59114D;
+    color: #ECE5F0;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-vaciar:hover,
+.btn-finalizar:hover {
+    background-color: #003B36;
+    color: white;
+}
+
+.cerrar-carrito {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #59114D;
+}
+
+
+/* ---------- TESTIMONIOS ---------- */
+.testimonios-section {
+    background-color: #ECE5F0;
+    padding: 30px;
+    text-align: center;
+}
+
+.testimonios-titulo {
+    font-size: 2rem;
+    color: #003B36;
+    margin-bottom: 20px;
+}
+
+.testimonios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.testimonio {
+    background-color: #fff;
+    border: 2px solid #003B36;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.testimonio-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.estrellas {
+    color: gold;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* ---------- FORMULARIO ---------- */
+.form-section {
+    background-color: #003B36;
+    color: #ECE5F0;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.form-titulo {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+}
+
+input[type="submit"] {
+    background-color: #E98A15;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffb84d;
+}
+
+/* Mensajes */
+.error-msg {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* ---------- UBICACION ---------- */
+.mapa-section {
+    background-color: #ECE5F0;
+    padding: 40px 10px;
+    text-align: center;
+}
+
+.mapa-titulo {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #003B36;
+}
+
+.mapa-contenedor iframe {
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    background-color: #59114D;
+    color: #ECE5F0;
+    padding: 30px 10px;
+    text-align: center;
+    font-family: Outfit, Verdana, Tahoma, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.footer-redes {
+    display: flex;
+    gap: 20px;
+    font-size: 1.8rem;
+}
+
+.footer-redes a {
+    color: #ECE5F0;
+    text-decoration: none;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.footer-redes a:hover {
+    color: #E98A15;
+    transform: scale(1.2);
+}
+
+@media (min-width: 600px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+}
+
+
+/* ---------- MEDIA QUERIES ---------- */
+@media only screen and (max-width: 400px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .item {
+        width: 90%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .form-section {
+        background-color: #012622;
+        color: #E98A15;
+    }
+}
